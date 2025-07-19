@@ -2,7 +2,7 @@ import Layout from "./Layout.jsx";
 
 import Home from "./Home";
 
-import Home-he from "./Home-he";
+import HomeHe from "./Home-he";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
