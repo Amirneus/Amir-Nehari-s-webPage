@@ -1,18 +1,12 @@
 import Layout from "./Layout.jsx";
-
 import Home from "./Home";
-
 import HomeHe from "./Home-he";
-
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 const PAGES = {
-    
     Home: Home,
-    
-    Home-he: Home-he,
-    
-}
+    HomeHe: HomeHe,
+};
 
 function _getCurrentPage(url) {
     if (url.endsWith('/')) {
@@ -27,22 +21,16 @@ function _getCurrentPage(url) {
     return pageName || Object.keys(PAGES)[0];
 }
 
-// Create a wrapper component that uses useLocation inside the Router context
 function PagesContent() {
     const location = useLocation();
     const currentPage = _getCurrentPage(location.pathname);
     
     return (
         <Layout currentPageName={currentPage}>
-            <Routes>            
-                
-                    <Route path="/" element={<Home />} />
-                
-                
+            <Routes>
+                <Route path="/" element={<Home />} />
                 <Route path="/Home" element={<Home />} />
-                
-                <Route path="/Home-he" element={<Home-he />} />
-                
+                <Route path="/Home-he" element={<HomeHe />} />
             </Routes>
         </Layout>
     );
